@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Config</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header">
+        <h1>Config-info for {{appname}}</h1>
+    </div>
+
+    <div class="alert alert-info" role="alert">
+        Denne siden sammenligner konfigurasjonen (dvs. property-filer) for {{appname}} i de forskjellige miljøene.
+        Kjør kommandoen <code>hubot config kreg|ksak|regelforvaltning|regelmotor</code> i slack for å generere denne
+        siden på nytt.
+        <br><br>
+        Siste gang denne siden ble generert var <strong>{{date}}</strong>
+    </div>
+
+    <!-- Tabell for test-->
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong>Test</strong></div>
+        <table class="table">
+          {{#each test}}
+              <tr>
+                  <td>{{@key}}</td>
+                  <td>{{this}}</td>
+              </tr>
+          {{/each}}
+        </table>
+    </div>
+
+    <!-- Tabell for qa-->
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong>QA</strong></div>
+        <table class="table">
+          {{#each qa}}
+              <tr>
+                  <td>{{@key}}</td>
+                  <td>{{this}}</td>
+              </tr>
+          {{/each}}
+        </table>
+    </div>
+
+    <!-- Tabell for produksjon-->
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong>Produksjon</strong></div>
+        <table class="table">
+          {{#each prod}}
+              <tr>
+                  <td>{{@key}}</td>
+                  <td>{{this}}</td>
+              </tr>
+          {{/each}}
+        </table>
+    </div>
+
+</div>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+

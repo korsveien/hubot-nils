@@ -1,0 +1,9 @@
+node_modules
+cron.log
+cron.output
+.DS_Store
+.hubot_history
+hubot.log
+hubot.pid
+.idea/
+config-info.html
